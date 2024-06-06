@@ -1,0 +1,89 @@
+:root{
+     --red: rgb(255, 0, 0);
+     --rose-gold: rgb(183, 110, 121);
+}
+
+body {  
+    background-color: rgb(10, 10, 20);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    margin: 0px;
+  }
+
+  .link {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    display: block; 
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(2em, 8vmin, 7em);
+    padding: clamp(0.25em, 1vmin, 1em) clamp(1em, 4vmin, 4em);
+    position: relative;
+    text-decoration: none;
+  }
+
+  .link:hover{
+    color: var(--rose-gold);
+  }
+  
+.link:hover:before{
+    transition: width 600ms ease;
+    width: 100%; 
+  }
+
+  .link:before {
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--red) var(--red-percent),
+      var(--rose-gold)
+    );
+
+    content: "";
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 0%;
+    position: absolute;
+  }
+  
+  .link:nth-child(3) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  #source-link {
+    top: 60px;
+  }
+  
+  #source-link > i {
+    color: rgb(94, 106, 210);
+  }
+
+  body.menu-toggled > .meta-link > span {
+    color: rgb(30, 30, 30);
+  }
+  
+  #source-link {
+    bottom: 60px;
+  }
+  
+  #source-link > i {
+    color: rgb(94, 106, 210);
+  }
+  
+  #yt-link > i {
+    color: rgb(239, 83, 80);
+  }
+
+  .circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    background-color: black;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999999; /* so that it stays on top of all other elements */
+  }
